@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from enroll.views import add_and_show, update
+from enroll.views import add_and_show, update_data, delete_data
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('add-and-show/',add_and_show, name="add-and-show" ),
-    path('update/', update, name="update"),
+    path('update/<int:id>', update_data, name="update"),
+    path('delete/<int:id>', delete_data, name='delete')
 ]
